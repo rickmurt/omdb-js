@@ -3,7 +3,7 @@ var app = express();
 var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
-var request = require('request');
+// var request = require('request');
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,16 +30,16 @@ app.post('/favorites', function(req, res){
   res.send(data);
 });
 
-app.get('/search', function(req, res){
-  var query = req.param('q');
+// app.get('/search', function(req, res){
+//   var query = req.param('q');
 
-  request('http://www.omdbapi.com/?s=' + query, function(error, response, body){
-    if (!error && response.statusCode == 200) {
-      res.send(JSON.parse(body));
-    }
-  });
+//   request('http://www.omdbapi.com/?s=' + query, function(error, response, body){
+//     if (!error && response.statusCode == 200) {
+//       res.send(JSON.parse(body));
+//     }
+//   });
 
-});
+// });
 
 app.listen(3000, function(){
   console.log("Listening on port 3000");
