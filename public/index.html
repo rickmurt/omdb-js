@@ -19,6 +19,7 @@
 </head>
 <body>
 
+    <!-- simple navbar with a favorites link -->
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -27,6 +28,7 @@
             <div>
                 <ul class="nav navbar-nav">
                     <li>
+                        <!-- favorites link at /favorites according to server.js -->
                         <a href="/favorites">
                             Favorites
                         </a>
@@ -41,11 +43,15 @@
             <h1>Search for a Movie</h1>
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="/search.html">
+                    <!-- javascript will intercept the submission of this form -->
+                    <form>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="q" name="q" placeholder="e.g., Star Wars">
+                            <input type="text" class="form-control" id="q" name="q" placeholder="e.g., Star Wars" required>
                             <span class="input-group-btn">
-                                <span class="glyphicon glyphicon-search"></span><button class="btn btn-default" type="submit">Go!</button>
+                                <span class="glyphicon glyphicon-search"></span>
+                                <button class="btn btn-default" type="submit">
+                                  Go!
+                                </button>
                             </span>
                         </div>
                     </form>
@@ -57,7 +63,7 @@
     <div class="container">
       <div class="row">
         <div id="search-results">
-        <!-- javascript will populate this -->
+          <!-- javascript will populate this -->
         </div>
       </div>
     </div>
